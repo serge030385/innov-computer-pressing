@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #14213d;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(180deg, rgba(232, 246, 252, 0.72), rgba(255, 255, 255, 0) 440px),
+    #ffffff;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(245, 124, 32, 0.22);
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-brand-blue;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-normal text-brand-ink sm:text-4xl;
+  }
+
+  .section-copy {
+    @apply max-w-3xl text-base leading-8 text-slate-600 sm:text-lg;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-orange px-5 py-3 text-sm font-bold text-white shadow-card transition hover:bg-brand-orangeDark focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-200;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brand-navy/15 bg-white px-5 py-3 text-sm font-bold text-brand-navy shadow-sm transition hover:border-brand-blue hover:text-brand-blue focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-200;
+  }
+
+  .surface {
+    @apply rounded-lg border border-slate-200/80 bg-white shadow-card;
+  }
+
+  .form-input {
+    @apply w-full rounded-md border border-slate-200 bg-white px-4 py-3 text-base text-brand-ink outline-none transition placeholder:text-slate-400 focus:border-brand-blue focus:ring-4 focus:ring-sky-100;
+  }
+
+  .form-label {
+    @apply text-sm font-semibold text-brand-ink;
+  }
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(7, 59, 111, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 59, 111, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.fade-up {
+  animation: fade-up 700ms ease both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

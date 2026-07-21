@@ -1,0 +1,257 @@
+[
+  {
+    "id": "attieke",
+    "name": {
+      "fr": "Attiéké",
+      "en": "Attieke",
+      "tr": "Attieke"
+    },
+    "description": {
+      "fr": "Semoule de manioc légère, parfaite avec poisson ou poulet.",
+      "en": "Light cassava couscous, perfect with fish or chicken.",
+      "tr": "Balık veya tavukla mükemmel hafif manyok kuskusu."
+    },
+    "category": "cookedMeals",
+    "price": 120,
+    "stock": "available",
+    "image": "/images/products/attieke.jpg"
+  },
+  {
+    "id": "poulet-braise",
+    "name": {
+      "fr": "Poulet braisé",
+      "en": "Grilled chicken",
+      "tr": "Izgara tavuk"
+    },
+    "description": {
+      "fr": "Poulet mariné aux épices africaines, grillé et prêt à réserver.",
+      "en": "Chicken marinated with African spices, grilled and ready to reserve.",
+      "tr": "Afrika baharatlarıyla marine edilmiş, ızgara ve rezervasyona hazır tavuk."
+    },
+    "category": "cookedMeals",
+    "price": 220,
+    "stock": "limited",
+    "image": "/images/products/poulet-braise.jpg"
+  },
+  {
+    "id": "riz-gras",
+    "name": {
+      "fr": "Riz gras",
+      "en": "Jollof rice",
+      "tr": "Jollof pilavı"
+    },
+    "description": {
+      "fr": "Riz parfumé à la tomate et aux épices, généreux et savoureux.",
+      "en": "Tomato and spice rice, generous and full of flavor.",
+      "tr": "Domates ve baharat aromalı, doyurucu ve lezzetli pilav."
+    },
+    "category": "cookedMeals",
+    "price": 160,
+    "stock": "available",
+    "image": "/images/products/riz-gras.jpg"
+  },
+  {
+    "id": "poisson-braise",
+    "name": {
+      "fr": "Poisson braisé",
+      "en": "Grilled fish",
+      "tr": "Izgara balık"
+    },
+    "description": {
+      "fr": "Poisson mariné aux épices africaines, servi sur réservation.",
+      "en": "Fish marinated with African spices, served by reservation.",
+      "tr": "Afrika baharatlarıyla marine edilmiş, rezervasyonla sunulan balık."
+    },
+    "category": "cookedMeals",
+    "price": 240,
+    "stock": "limited",
+    "image": "/images/products/poisson-braise.jpg"
+  },
+  {
+    "id": "ndole",
+    "name": {
+      "fr": "Ndolé",
+      "en": "Ndole",
+      "tr": "Ndole"
+    },
+    "description": {
+      "fr": "Plat camerounais aux feuilles, arachides et assaisonnements maison.",
+      "en": "Cameroonian dish with leaves, peanuts, and house seasoning.",
+      "tr": "Yaprak, yer fıstığı ve ev yapımı baharatlarla Kamerun yemeği."
+    },
+    "category": "cookedMeals",
+    "price": 210,
+    "stock": "available",
+    "image": "/images/products/ndole.jpg"
+  },
+  {
+    "id": "piment-africain",
+    "name": {
+      "fr": "Piment africain",
+      "en": "African chili pepper",
+      "tr": "Afrika acı biberi"
+    },
+    "description": {
+      "fr": "Piment fort pour relever sauces, grillades et bouillons.",
+      "en": "Hot chili pepper for sauces, grilled dishes, and broths.",
+      "tr": "Soslar, ızgaralar ve çorbalar için acı biber."
+    },
+    "category": "spices",
+    "price": 65,
+    "stock": "available",
+    "image": "/images/products/piment-africain.jpg"
+  },
+  {
+    "id": "gombo-sec",
+    "name": {
+      "fr": "Gombo sec",
+      "en": "Dried okra",
+      "tr": "Kurutulmuş bamya"
+    },
+    "description": {
+      "fr": "Gombo séché pour sauces africaines traditionnelles.",
+      "en": "Dried okra for traditional African sauces.",
+      "tr": "Geleneksel Afrika sosları için kurutulmuş bamya."
+    },
+    "category": "dryProducts",
+    "price": 85,
+    "stock": "available",
+    "image": "/images/products/gombo-sec.jpg"
+  },
+  {
+    "id": "manioc",
+    "name": {
+      "fr": "Manioc",
+      "en": "Cassava",
+      "tr": "Manyok"
+    },
+    "description": {
+      "fr": "Manioc frais, idéal avec poissons, sauces ou grillades.",
+      "en": "Fresh cassava, ideal with fish, sauces, or grilled dishes.",
+      "tr": "Balık, sos veya ızgaralarla ideal taze manyok."
+    },
+    "category": "freshProducts",
+    "price": 110,
+    "stock": "limited",
+    "image": "/images/products/manioc.jpg"
+  },
+  {
+    "id": "plantain",
+    "name": {
+      "fr": "Plantain",
+      "en": "Plantain",
+      "tr": "Plantain muz"
+    },
+    "description": {
+      "fr": "Bananes plantains pour friture, braisé ou cuisson vapeur.",
+      "en": "Plantains for frying, grilling, or steaming.",
+      "tr": "Kızartma, ızgara veya buharda pişirme için plantain muz."
+    },
+    "category": "freshProducts",
+    "price": 75,
+    "stock": "available",
+    "image": "/images/products/plantain.jpg"
+  },
+  {
+    "id": "arachide",
+    "name": {
+      "fr": "Arachides",
+      "en": "Peanuts",
+      "tr": "Yer fıstığı"
+    },
+    "description": {
+      "fr": "Arachides pour apéritif, sauces ou cuisine maison.",
+      "en": "Peanuts for snacks, sauces, or home cooking.",
+      "tr": "Atıştırmalık, sos veya ev yemekleri için yer fıstığı."
+    },
+    "category": "dryProducts",
+    "price": 70,
+    "stock": "available",
+    "image": "/images/products/arachide.jpg"
+  },
+  {
+    "id": "bissap",
+    "name": {
+      "fr": "Bissap",
+      "en": "Bissap",
+      "tr": "Bissap"
+    },
+    "description": {
+      "fr": "Boisson d’hibiscus rafraîchissante, parfaite bien fraîche.",
+      "en": "Refreshing hibiscus drink, best served cold.",
+      "tr": "Soğuk servis edilen ferahlatıcı hibiskus içeceği."
+    },
+    "category": "drinks",
+    "price": 60,
+    "stock": "available",
+    "image": "/images/products/bissap.jpg"
+  },
+  {
+    "id": "gingembre",
+    "name": {
+      "fr": "Jus de gingembre",
+      "en": "Ginger drink",
+      "tr": "Zencefil içeceği"
+    },
+    "description": {
+      "fr": "Boisson au gingembre, fraîche, tonique et légèrement épicée.",
+      "en": "Fresh, energizing, lightly spicy ginger drink.",
+      "tr": "Taze, canlandırıcı ve hafif baharatlı zencefil içeceği."
+    },
+    "category": "drinks",
+    "price": 65,
+    "stock": "limited",
+    "image": "/images/products/gingembre.jpg"
+  },
+  {
+    "id": "haricot",
+    "name": {
+      "fr": "Haricots",
+      "en": "Beans",
+      "tr": "Fasulye"
+    },
+    "description": {
+      "fr": "Haricots secs pour sauces, beignets ou plats mijotés.",
+      "en": "Dry beans for sauces, fritters, or slow-cooked meals.",
+      "tr": "Soslar, mücverler veya uzun pişen yemekler için kuru fasulye."
+    },
+    "category": "dryProducts",
+    "price": 90,
+    "stock": "available",
+    "image": "/images/products/haricot.jpg"
+  },
+  {
+    "id": "epices-poulet",
+    "name": {
+      "fr": "Épices poulet",
+      "en": "Chicken spices",
+      "tr": "Tavuk baharatı"
+    },
+    "description": {
+      "fr": "Mélange parfumé pour marinades, grillades et plats de poulet.",
+      "en": "Aromatic blend for marinades, grilled dishes, and chicken meals.",
+      "tr": "Marinasyon, ızgara ve tavuk yemekleri için aromatik karışım."
+    },
+    "category": "spices",
+    "price": 100,
+    "stock": "limited",
+    "image": "/images/products/epices-poulet.jpg"
+  },
+  {
+    "id": "sauce-graine",
+    "name": {
+      "fr": "Sauce graine",
+      "en": "Palm nut sauce",
+      "tr": "Palm cevizi sosu"
+    },
+    "description": {
+      "fr": "Base généreuse pour une sauce graine riche et traditionnelle.",
+      "en": "Generous base for a rich, traditional palm nut sauce.",
+      "tr": "Zengin ve geleneksel palm cevizi sosu için doyurucu baz."
+    },
+    "category": "cookedMeals",
+    "price": 190,
+    "stock": "outOfStock",
+    "image": "/images/products/sauce-graine.jpg"
+  }
+]
