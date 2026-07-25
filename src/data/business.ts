@@ -15,8 +15,7 @@ export const business = {
   primaryWhatsApp: "237652730136",
   secondaryWhatsApp: "237694286806",
   mapsQuery: "Pharmacie Akwa Nord, Douala, Cameroun",
-  siteUrl:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://innov-computer-pressing.vercel.app"
+  websiteUrl: "https://innov-pressing.com"
 } as const;
 
 export const navLinks = [

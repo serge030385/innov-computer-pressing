@@ -7,8 +7,15 @@ import {
   whatsappHref,
   whatsappMessages
 } from "@/data/business";
+import { createPageMetadata } from "@/data/metadata";
 
 export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: "Contact",
+    description:
+      "Contactez Innov Computer Pressing à Akwa Nord, Douala. Appel, WhatsApp, itinéraire et demande de collecte de linge.",
+    path: "/contact"
+  }),
   title: "Contact",
   description:
     "Contactez Innov Computer Pressing à Akwa Nord, Douala. Appel, WhatsApp, itinéraire et demande de collecte de linge."

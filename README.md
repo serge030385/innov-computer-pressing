@@ -24,7 +24,7 @@ npm run build
 2. Garder les commandes par défaut détectées par Vercel :
    - Build command : `npm run build`
    - Install command : `npm install`
-3. Ajouter `NEXT_PUBLIC_SITE_URL` avec l’URL finale du site, par exemple `https://votre-domaine.com`.
+3. Utiliser le domaine définitif du site : `https://innov-pressing.com`.
 4. Déployer.
 
 ## Modifier les informations du pressing
@@ -37,7 +37,7 @@ Toutes les coordonnées principales sont centralisées dans `src/data/business.t
 - téléphones ;
 - numéros WhatsApp ;
 - recherche Google Maps ;
-- URL du site.
+- URL du site : `https://innov-pressing.com`.
 
 ## Remplacer le logo et les images
 

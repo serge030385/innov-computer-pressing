@@ -3,9 +3,16 @@ import Link from "next/link";
 import { AlertTriangle, ArrowRight } from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
 import { whatsappHref, whatsappMessages } from "@/data/business";
+import { createPageMetadata } from "@/data/metadata";
 import { services } from "@/data/services";
 
 export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: "Nos services",
+    description:
+      "Découvrez les services d’Innov Computer Pressing à Douala : lavage à la pièce, lavage au poids, repassage, express, collecte et livraison.",
+    path: "/services"
+  }),
   title: "Nos services",
   description:
     "Découvrez les services d’Innov Computer Pressing à Douala : lavage à la pièce, lavage au poids, repassage, express, collecte et livraison."

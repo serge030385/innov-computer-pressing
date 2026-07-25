@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { CheckCircle2 } from "lucide-react";
+import { createPageMetadata } from "@/data/metadata";
 
 export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: "À propos",
+    description:
+      "Découvrez Innov Computer Pressing, service de pressing situé à Akwa Nord, Douala, avec lavage, express, collecte et livraison.",
+    path: "/a-propos"
+  }),
   title: "À propos",
   description:
     "Découvrez Innov Computer Pressing, service de pressing situé à Akwa Nord, Douala, avec lavage, express, collecte et livraison."
