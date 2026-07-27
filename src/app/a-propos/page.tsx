@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   ...createPageMetadata({
     title: "À propos",
     description:
-      "Découvrez Innov Computer Pressing, service de pressing situé à Akwa Nord, Douala, avec lavage, express, collecte et livraison.",
+      "Découvrez Innov-Pressing, service de pressing situé à Akwa Nord, Douala, avec lavage, express, collecte et livraison.",
     path: "/a-propos"
   }),
   title: "À propos",
   description:
-    "Découvrez Innov Computer Pressing, service de pressing situé à Akwa Nord, Douala, avec lavage, express, collecte et livraison."
+    "Découvrez Innov-Pressing, service de pressing situé à Akwa Nord, Douala, avec lavage, express, collecte et livraison."
 };
 
 const commitments = [
@@ -29,10 +29,10 @@ export default function AboutPage() {
         <div className="container-page">
           <p className="eyebrow">À propos</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-black text-brand-navy sm:text-5xl">
-            À propos d’Innov Computer Pressing
+            À propos d’Innov-Pressing
           </h1>
           <p className="section-copy mt-5">
-            Innov Computer Pressing est un service de pressing situé à Akwa Nord, à Douala. Notre
+            Innov-Pressing est un service de pressing situé à Akwa Nord, à Douala. Notre
             objectif est de faciliter l’entretien du linge grâce à des services rapides, pratiques
             et accessibles, notamment le lavage à la pièce, le lavage au poids, le service express,
             la collecte et la livraison à domicile.

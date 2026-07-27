@@ -11,7 +11,7 @@ const openGraphImage = {
 export const metadataConfig = {
   websiteUrl: business.websiteUrl,
   openGraphImage,
-  logoImageUrl: `${business.websiteUrl}/images/logo-innov-computer-pressing.png`,
+  logoImageUrl: `${business.websiteUrl}/images/logo-innov-pressing.png`,
   routes: ["/", "/services", "/collecte-et-livraison", "/a-propos", "/contact"]
 } as const;
 

@@ -24,7 +24,7 @@ export const services: Service[] = [
       "Confiez-nous vos chemises, pantalons, robes, costumes et autres vêtements pour un entretien adapté.",
     icon: "shirt",
     requestMessage:
-      "Bonjour Innov Computer Pressing, je souhaite obtenir des informations sur le lavage à la pièce."
+      "Bonjour Innov-Pressing, je souhaite obtenir des informations sur le lavage à la pièce."
   },
   {
     id: "lavage-poids",
@@ -33,7 +33,7 @@ export const services: Service[] = [
       "Une solution pratique et économique pour le nettoyage de plusieurs vêtements.",
     icon: "scale",
     requestMessage:
-      "Bonjour Innov Computer Pressing, je souhaite obtenir des informations sur le lavage au poids."
+      "Bonjour Innov-Pressing, je souhaite obtenir des informations sur le lavage au poids."
   },
   {
     id: "lavage-repassage",
@@ -42,7 +42,7 @@ export const services: Service[] = [
       "Vos vêtements sont lavés, repassés et soigneusement préparés avant leur restitution.",
     icon: "sparkles",
     requestMessage:
-      "Bonjour Innov Computer Pressing, je souhaite obtenir des informations sur le lavage et repassage."
+      "Bonjour Innov-Pressing, je souhaite obtenir des informations sur le lavage et repassage."
   },
   {
     id: "laver-emporter",
@@ -51,7 +51,7 @@ export const services: Service[] = [
       "Déposez votre linge et récupérez-le propre dans les meilleurs délais.",
     icon: "package",
     requestMessage:
-      "Bonjour Innov Computer Pressing, je souhaite obtenir des informations sur le service laver et emporter."
+      "Bonjour Innov-Pressing, je souhaite obtenir des informations sur le service laver et emporter."
   },
   {
     id: "express",
@@ -60,7 +60,7 @@ export const services: Service[] = [
       "Un service rapide pour vos besoins urgents, selon la nature et la quantité du linge.",
     icon: "timer",
     requestMessage:
-      "Bonjour Innov Computer Pressing, je souhaite savoir si le service express en 2 heures est disponible aujourd’hui."
+      "Bonjour Innov-Pressing, je souhaite savoir si le service express en 2 heures est disponible aujourd’hui."
   },
   {
     id: "collecte",
@@ -68,7 +68,7 @@ export const services: Service[] = [
     description: "Nous récupérons votre linge directement à votre domicile.",
     icon: "home",
     requestMessage:
-      "Bonjour Innov Computer Pressing, je souhaite demander une collecte de linge à domicile."
+      "Bonjour Innov-Pressing, je souhaite demander une collecte de linge à domicile."
   },
   {
     id: "livraison",
@@ -77,7 +77,7 @@ export const services: Service[] = [
       "Une fois votre linge prêt, nous vous le livrons à l’adresse convenue.",
     icon: "truck",
     requestMessage:
-      "Bonjour Innov Computer Pressing, je souhaite obtenir des informations sur la livraison à domicile."
+      "Bonjour Innov-Pressing, je souhaite obtenir des informations sur la livraison à domicile."
   },
   {
     id: "ramassage-douala",
@@ -86,7 +86,7 @@ export const services: Service[] = [
       "Notre service de ramassage couvre différents quartiers de Douala.",
     icon: "map",
     requestMessage:
-      "Bonjour Innov Computer Pressing, je souhaite savoir si le ramassage est disponible dans mon quartier."
+      "Bonjour Innov-Pressing, je souhaite savoir si le ramassage est disponible dans mon quartier."
   }
 ];
 

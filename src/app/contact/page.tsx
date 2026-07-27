@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   ...createPageMetadata({
     title: "Contact",
     description:
-      "Contactez Innov Computer Pressing à Akwa Nord, Douala. Appel, WhatsApp, itinéraire et demande de collecte de linge.",
+      "Contactez Innov-Pressing à Akwa Nord, Douala. Appel, WhatsApp, itinéraire et demande de collecte de linge.",
     path: "/contact"
   }),
   title: "Contact",
   description:
-    "Contactez Innov Computer Pressing à Akwa Nord, Douala. Appel, WhatsApp, itinéraire et demande de collecte de linge."
+    "Contactez Innov-Pressing à Akwa Nord, Douala. Appel, WhatsApp, itinéraire et demande de collecte de linge."
 };
 
 export default function ContactPage() {
@@ -33,7 +33,7 @@ export default function ContactPage() {
         <div className="container-page">
           <p className="eyebrow">Contact</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-black text-brand-navy sm:text-5xl">
-            Contactez Innov Computer Pressing
+            Contactez Innov-Pressing
           </h1>
           <p className="section-copy mt-5">
             Appelez-nous, écrivez sur WhatsApp ou demandez une collecte de linge à domicile dans

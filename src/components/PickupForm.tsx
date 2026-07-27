@@ -55,7 +55,7 @@ export function PickupForm() {
   const [errors, setErrors] = useState<ErrorState>({});
 
   const message = useMemo(
-    () => `Bonjour Innov Computer Pressing,
+    () => `Bonjour Innov-Pressing,
 
 Je souhaite programmer une collecte.
 

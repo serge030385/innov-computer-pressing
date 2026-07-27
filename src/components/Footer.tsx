@@ -52,7 +52,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10 py-5">
         <p className="container-page text-sm text-white/62">
-          © 2026 Innov Computer Pressing. Tous droits réservés.
+          © 2026 Innov-Pressing. Tous droits réservés.
         </p>
       </div>
     </footer>

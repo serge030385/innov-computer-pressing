@@ -1,6 +1,6 @@
 export const business = {
-  name: "Innov Computer Pressing",
-  displayName: "INNOV COMPUTER PRESSING",
+  name: "Innov-Pressing",
+  displayName: "INNOV-PRESSING",
   slogan: "Votre linge, notre priorité.",
   subtitle: "Confiez-nous vos vêtements, nous en prendrons soin !",
   address:
@@ -28,13 +28,13 @@ export const navLinks = [
 
 export const whatsappMessages = {
   pickup:
-    "Bonjour Innov Computer Pressing, je souhaite demander une collecte de linge à domicile.",
+    "Bonjour Innov-Pressing, je souhaite demander une collecte de linge à domicile.",
   schedule:
-    "Bonjour Innov Computer Pressing, je souhaite programmer une collecte de linge. Voici mon quartier et mon adresse :",
+    "Bonjour Innov-Pressing, je souhaite programmer une collecte de linge. Voici mon quartier et mon adresse :",
   express:
-    "Bonjour Innov Computer Pressing, je souhaite savoir si le service express en 2 heures est disponible aujourd’hui.",
+    "Bonjour Innov-Pressing, je souhaite savoir si le service express en 2 heures est disponible aujourd’hui.",
   information:
-    "Bonjour Innov Computer Pressing, je souhaite obtenir des informations sur vos services."
+    "Bonjour Innov-Pressing, je souhaite obtenir des informations sur vos services."
 } as const;
 
 export function whatsappHref(
@@ -51,9 +51,9 @@ export function mapsSearchHref() {
 }
 
 export const seo = {
-  title: "Innov Computer Pressing | Pressing, collecte et livraison à Douala",
+  title: "Innov-Pressing | Pressing, collecte et livraison à Douala",
   description:
-    "Innov Computer Pressing propose le lavage à la pièce, le lavage au poids, le lavage express en 2 heures, la collecte et la livraison de linge à domicile dans Douala.",
+    "Innov-Pressing propose le lavage à la pièce, le lavage au poids, le lavage express en 2 heures, la collecte et la livraison de linge à domicile dans Douala.",
   keywords: [
     "pressing Douala",
     "pressing Akwa Nord",
@@ -62,6 +62,6 @@ export const seo = {
     "collecte linge Douala",
     "livraison linge Douala",
     "lavage express Douala",
-    "Innov Computer Pressing"
+    "Innov-Pressing"
   ]
 } as const;

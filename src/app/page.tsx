@@ -126,7 +126,7 @@ export default function HomePage() {
             <p className="eyebrow">Votre quotidien simplifié</p>
             <h2 className="section-title mt-3">Un pressing au service de votre quotidien</h2>
             <p className="section-copy mt-5">
-              Innov Computer Pressing prend soin de vos vêtements grâce à un service rapide,
+              Innov-Pressing prend soin de vos vêtements grâce à un service rapide,
               pratique et accessible. Nous proposons le lavage à la pièce, le lavage au poids, le
               lavage express ainsi que la collecte et la livraison à domicile dans Douala.
             </p>
@@ -158,7 +158,7 @@ export default function HomePage() {
         <div className="container-page">
           <div className="max-w-3xl">
             <p className="eyebrow">Pourquoi nous choisir</p>
-            <h2 className="section-title mt-3">Pourquoi choisir Innov Computer Pressing ?</h2>
+            <h2 className="section-title mt-3">Pourquoi choisir Innov-Pressing ?</h2>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((reason) => {

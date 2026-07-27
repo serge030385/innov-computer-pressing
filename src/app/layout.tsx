@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(metadataConfig.websiteUrl),
   title: {
     default: seo.title,
-    template: "%s | Innov Computer Pressing"
+    template: "%s | Innov-Pressing"
   },
   keywords: [...seo.keywords],
   applicationName: business.name,

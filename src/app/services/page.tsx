@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   ...createPageMetadata({
     title: "Nos services",
     description:
-      "Découvrez les services d’Innov Computer Pressing à Douala : lavage à la pièce, lavage au poids, repassage, express, collecte et livraison.",
+      "Découvrez les services d’Innov-Pressing à Douala : lavage à la pièce, lavage au poids, repassage, express, collecte et livraison.",
     path: "/services"
   }),
   title: "Nos services",
   description:
-    "Découvrez les services d’Innov Computer Pressing à Douala : lavage à la pièce, lavage au poids, repassage, express, collecte et livraison."
+    "Découvrez les services d’Innov-Pressing à Douala : lavage à la pièce, lavage au poids, repassage, express, collecte et livraison."
 };
 
 export default function ServicesPage() {

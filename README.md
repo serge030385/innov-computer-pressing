@@ -1,6 +1,6 @@
-# Innov Computer Pressing
+# Innov-Pressing
 
-Site officiel d’Innov Computer Pressing, pressing situé à Akwa Nord, Douala. Le projet est construit avec Next.js App Router, TypeScript, Tailwind CSS et Lucide React.
+Site officiel d’Innov-Pressing, pressing situé à Akwa Nord, Douala. Le projet est construit avec Next.js App Router, TypeScript, Tailwind CSS et Lucide React.
 
 ## Installation
 
@@ -41,7 +41,7 @@ Toutes les coordonnées principales sont centralisées dans `src/data/business.t
 
 ## Remplacer le logo et les images
 
-- Logo : placer le logo officiel ici : `public/images/logo-innov-computer-pressing.png`.
+- Logo : placer le logo officiel ici : `public/images/logo-innov-pressing.png`.
 - Image principale : remplacer `public/images/pressing/pressing-hero.png` par une photo réelle du pressing, de vêtements propres ou d’un espace de travail.
 - Image collecte/livraison : remplacer `public/images/pressing/laundry-delivery.png` par une photo réelle du véhicule, du ramassage ou de la livraison du pressing.
 - Google Maps : la page contact utilise une recherche basée sur `Pharmacie Akwa Nord, Douala, Cameroun`. Remplacer `mapsQuery` dans `src/data/business.ts` lorsque les coordonnées GPS exactes du pressing sont disponibles.

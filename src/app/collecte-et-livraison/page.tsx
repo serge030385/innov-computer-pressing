@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   ...createPageMetadata({
     title: "Collecte et livraison",
     description:
-      "Programmez une collecte de linge à domicile avec Innov Computer Pressing à Douala. Le formulaire prépare un message WhatsApp structuré.",
+      "Programmez une collecte de linge à domicile avec Innov-Pressing à Douala. Le formulaire prépare un message WhatsApp structuré.",
     path: "/collecte-et-livraison"
   }),
   title: "Collecte et livraison",
   description:
-    "Programmez une collecte de linge à domicile avec Innov Computer Pressing à Douala. Le formulaire prépare un message WhatsApp structuré."
+    "Programmez une collecte de linge à domicile avec Innov-Pressing à Douala. Le formulaire prépare un message WhatsApp structuré."
 };
 
 const process = [
