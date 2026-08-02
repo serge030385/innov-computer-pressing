@@ -20,8 +20,10 @@ export const business = {
 
 export const navLinks = [
   { href: "/", label: "Accueil" },
-  { href: "/services", label: "Nos services" },
-  { href: "/collecte-et-livraison", label: "Collecte et livraison" },
+  { href: "/services", label: "Services" },
+  { href: "/collecte-et-livraison", label: "Collecte" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/blog", label: "Blog" },
   { href: "/a-propos", label: "À propos" },
   { href: "/contact", label: "Contact" }
 ] as const;
@@ -51,17 +53,24 @@ export function mapsSearchHref() {
 }
 
 export const seo = {
-  title: "Innov-Pressing | Pressing, collecte et livraison à Douala",
+  title: "Innov-Pressing | Pressing à Douala – Collecte & Livraison",
   description:
-    "Innov-Pressing propose le lavage à la pièce, le lavage au poids, le lavage express en 2 heures, la collecte et la livraison de linge à domicile dans Douala.",
+    "Innov-Pressing propose pressing à Douala, lavage au poids, repassage, collecte et livraison à Akwa Nord et quartiers proches.",
   keywords: [
     "pressing Douala",
+    "pressing Akwa",
     "pressing Akwa Nord",
     "laverie Douala",
-    "lavage vêtements Douala",
+    "pressing Cameroun",
+    "nettoyage vêtements Douala",
+    "lavage au poids Douala",
+    "lavage à la pièce Douala",
+    "pressing livraison Douala",
     "collecte linge Douala",
-    "livraison linge Douala",
-    "lavage express Douala",
+    "pressing express Douala",
+    "repassage Douala",
+    "nettoyage rideaux Douala",
+    "nettoyage couettes Douala",
     "Innov-Pressing"
   ]
 } as const;

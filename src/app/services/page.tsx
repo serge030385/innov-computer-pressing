@@ -1,35 +1,59 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AlertTriangle, ArrowRight } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
 import { ServiceCard } from "@/components/ServiceCard";
 import { whatsappHref, whatsappMessages } from "@/data/business";
 import { createPageMetadata } from "@/data/metadata";
+import { breadcrumbSchema, pageGraph, webPageSchema } from "@/data/schema";
+import { blogPosts, primarySeoKeywords } from "@/data/seo-content";
 import { services } from "@/data/services";
+
+const title = "Services de pressing à Douala | Innov-Pressing";
+const description =
+  "Lavage à la pièce, lavage au poids, repassage, express, rideaux et couettes : nos services de pressing à Douala.";
 
 export const metadata: Metadata = {
   ...createPageMetadata({
-    title: "Nos services",
-    description:
-      "Découvrez les services d’Innov-Pressing à Douala : lavage à la pièce, lavage au poids, repassage, express, collecte et livraison.",
-    path: "/services"
+    title,
+    description,
+    path: "/services",
+    keywords: primarySeoKeywords
   }),
-  title: "Nos services",
-  description:
-    "Découvrez les services d’Innov-Pressing à Douala : lavage à la pièce, lavage au poids, repassage, express, collecte et livraison."
+  description
 };
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Accueil", path: "/" },
+  { name: "Services", path: "/services" }
+]);
+
+const schema = pageGraph(
+  webPageSchema({
+    path: "/services",
+    title,
+    description,
+    breadcrumbs: [
+      { name: "Accueil", path: "/" },
+      { name: "Services", path: "/services" }
+    ]
+  }),
+  breadcrumbs
+);
 
 export default function ServicesPage() {
   return (
-    <main>
+    <main id="contenu">
+      <JsonLd id="services-schema" data={schema} />
       <section className="bg-brand-mist py-16 sm:py-20">
         <div className="container-page">
           <p className="eyebrow">Nos services</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-black text-brand-navy sm:text-5xl">
-            Des services de pressing clairs, pratiques et accessibles.
+            Services de pressing à Douala : lavage, repassage et collecte.
           </h1>
           <p className="section-copy mt-5">
-            Choisissez le service adapté à votre linge, puis contactez-nous pour confirmer les
-            détails selon la nature des vêtements et la quantité à traiter.
+            Choisissez le service adapté à votre linge : lavage à la pièce, lavage au poids,
+            repassage, pressing express, collecte et livraison à domicile dans Douala.
           </p>
         </div>
       </section>
@@ -55,6 +79,31 @@ export default function ServicesPage() {
             </div>
           </div>
 
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <article className="surface p-6">
+              <h2 className="text-2xl font-bold text-brand-ink">Nettoyage de vêtements à Douala</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Chemises, pantalons, robes, costumes et linge du quotidien peuvent être orientés
+                vers un lavage à la pièce ou un lavage au poids selon la matière, l’état et la
+                quantité.
+              </p>
+            </article>
+            <article className="surface p-6">
+              <h2 className="text-2xl font-bold text-brand-ink">Rideaux, couettes et linge volumineux</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Les rideaux et couettes nécessitent une vérification de la taille, du garnissage et
+                de l’étiquette. Contactez-nous pour confirmer la faisabilité avant la collecte.
+              </p>
+            </article>
+            <article className="surface p-6">
+              <h2 className="text-2xl font-bold text-brand-ink">Repassage et finitions</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Le repassage aide à préparer vos chemises, tenues de travail et vêtements habillés
+                avec un rendu net, utile pour les journées professionnelles à Douala.
+              </p>
+            </article>
+          </div>
+
           <div className="mt-10 rounded-lg bg-brand-navy p-8 text-white sm:p-10">
             <h2 className="text-3xl font-bold">Vous avez un besoin particulier ?</h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-white/76">
@@ -74,17 +123,25 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-brand-mist py-14">
-        <div className="container-page flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
+        <div className="container-page flex flex-col justify-between gap-5 lg:flex-row lg:items-center">
           <div>
-            <h2 className="text-2xl font-bold text-brand-ink">Besoin d’un ramassage à domicile ?</h2>
+            <h2 className="text-2xl font-bold text-brand-ink">Besoin d’un ramassage ou d’un conseil ?</h2>
             <p className="mt-2 text-sm leading-7 text-slate-600">
-              Programmez une collecte et indiquez votre quartier dans Douala.
+              Programmez une collecte, consultez la FAQ ou lisez nos conseils d’entretien du linge.
             </p>
           </div>
-          <Link href="/collecte-et-livraison" className="button-secondary">
-            Collecte et livraison
-            <ArrowRight aria-hidden="true" className="size-5" />
-          </Link>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link href="/collecte-et-livraison" className="button-secondary">
+              Collecte et livraison
+              <ArrowRight aria-hidden="true" className="size-5" />
+            </Link>
+            <Link href="/faq" className="button-secondary">
+              FAQ pressing
+            </Link>
+            <Link href={`/blog/${blogPosts[0].slug}`} className="button-secondary">
+              Conseils pressing
+            </Link>
+          </div>
         </div>
       </section>
     </main>

@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { createPageMetadata } from "@/data/metadata";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, pageGraph, webPageSchema } from "@/data/schema";
+import { primarySeoKeywords } from "@/data/seo-content";
+
+const title = "À propos de Innov-Pressing";
+const description =
+  "Découvrez Innov-Pressing, pressing à Akwa Nord Douala, dédié au lavage, repassage, collecte et livraison.";
 
 export const metadata: Metadata = {
   ...createPageMetadata({
-    title: "À propos",
-    description:
-      "Découvrez Innov-Pressing, service de pressing situé à Akwa Nord, Douala, avec lavage, express, collecte et livraison.",
-    path: "/a-propos"
+    title,
+    description,
+    path: "/a-propos",
+    keywords: primarySeoKeywords
   }),
-  title: "À propos",
-  description:
-    "Découvrez Innov-Pressing, service de pressing situé à Akwa Nord, Douala, avec lavage, express, collecte et livraison."
+  description
 };
 
 const commitments = [
@@ -22,9 +28,28 @@ const commitments = [
   "Maintenir des prix accessibles"
 ];
 
+const breadcrumbs = breadcrumbSchema([
+  { name: "Accueil", path: "/" },
+  { name: "À propos", path: "/a-propos" }
+]);
+
+const schema = pageGraph(
+  webPageSchema({
+    path: "/a-propos",
+    title,
+    description,
+    breadcrumbs: [
+      { name: "Accueil", path: "/" },
+      { name: "À propos", path: "/a-propos" }
+    ]
+  }),
+  breadcrumbs
+);
+
 export default function AboutPage() {
   return (
-    <main>
+    <main id="contenu">
+      <JsonLd id="about-schema" data={schema} />
       <section className="bg-brand-mist py-16 sm:py-20">
         <div className="container-page">
           <p className="eyebrow">À propos</p>
@@ -61,6 +86,28 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-mist py-14">
+        <div className="container-page flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
+          <div>
+            <h2 className="text-2xl font-bold text-brand-ink">Besoin d’un service de pressing à Douala ?</h2>
+            <p className="mt-2 text-sm leading-7 text-slate-600">
+              Consultez nos services, nos réponses fréquentes ou demandez une collecte de linge.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link href="/services" className="button-secondary">
+              Services
+            </Link>
+            <Link href="/faq" className="button-secondary">
+              FAQ
+            </Link>
+            <Link href="/contact" className="button-primary">
+              Contact
+            </Link>
           </div>
         </div>
       </section>

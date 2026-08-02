@@ -2,10 +2,11 @@ import Image from "next/image";
 
 type LogoProps = {
   compact?: boolean;
+  priority?: boolean;
   tone?: "light" | "dark";
 };
 
-export function Logo({ compact = false, tone = "light" }: LogoProps) {
+export function Logo({ compact = false, priority = false, tone = "light" }: LogoProps) {
   const nameClass = tone === "dark" ? "text-white" : "text-brand-navy";
 
   return (
@@ -18,7 +19,7 @@ export function Logo({ compact = false, tone = "light" }: LogoProps) {
           height={1024}
           sizes="56px"
           className="h-full w-full object-contain"
-          priority
+          priority={priority}
         />
       </span>
       {!compact && (

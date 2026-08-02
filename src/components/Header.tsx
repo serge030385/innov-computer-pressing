@@ -18,12 +18,15 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
       <div className="container-page relative flex min-h-[76px] items-center justify-between gap-4">
         <Link href="/" aria-label={`${business.name} - accueil`} className="shrink-0">
-          <Logo />
+          <Logo priority />
         </Link>
 
-        <nav aria-label="Navigation principale" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Navigation principale" className="hidden items-center gap-1 xl:flex">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive =
+              link.href === "/"
+                ? pathname === link.href
+                : pathname === link.href || pathname.startsWith(`${link.href}/`);
 
             return (
               <Link
@@ -41,7 +44,7 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <a href={business.primaryPhoneHref} className="text-sm font-bold text-brand-navy">
             {business.primaryPhone}
           </a>

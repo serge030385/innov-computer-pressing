@@ -7,20 +7,26 @@ import {
   PackageCheck,
   Truck
 } from "lucide-react";
+import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
 import { PickupForm } from "@/components/PickupForm";
 import { whatsappHref, whatsappMessages } from "@/data/business";
 import { createPageMetadata } from "@/data/metadata";
+import { breadcrumbSchema, pageGraph, webPageSchema } from "@/data/schema";
+import { landingPages, primarySeoKeywords } from "@/data/seo-content";
+
+const title = "Collecte et livraison de linge à Douala";
+const description =
+  "Collecte et livraison de linge à Douala : programmez le ramassage à domicile avec Innov-Pressing.";
 
 export const metadata: Metadata = {
   ...createPageMetadata({
-    title: "Collecte et livraison",
-    description:
-      "Programmez une collecte de linge à domicile avec Innov-Pressing à Douala. Le formulaire prépare un message WhatsApp structuré.",
-    path: "/collecte-et-livraison"
+    title,
+    description,
+    path: "/collecte-et-livraison",
+    keywords: primarySeoKeywords
   }),
-  title: "Collecte et livraison",
-  description:
-    "Programmez une collecte de linge à domicile avec Innov-Pressing à Douala. Le formulaire prépare un message WhatsApp structuré."
+  description
 };
 
 const process = [
@@ -46,18 +52,38 @@ const process = [
   }
 ];
 
+const breadcrumbs = breadcrumbSchema([
+  { name: "Accueil", path: "/" },
+  { name: "Collecte et livraison", path: "/collecte-et-livraison" }
+]);
+
+const schema = pageGraph(
+  webPageSchema({
+    path: "/collecte-et-livraison",
+    title,
+    description,
+    breadcrumbs: [
+      { name: "Accueil", path: "/" },
+      { name: "Collecte et livraison", path: "/collecte-et-livraison" }
+    ]
+  }),
+  breadcrumbs
+);
+
 export default function PickupPage() {
   return (
-    <main>
+    <main id="contenu">
+      <JsonLd id="pickup-schema" data={schema} />
       <section className="bg-brand-mist py-16 sm:py-20">
         <div className="container-page">
           <p className="eyebrow">Collecte et livraison</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-black text-brand-navy sm:text-5xl">
-            Programmez le ramassage de votre linge à domicile.
+            Collecte et livraison de linge à Douala.
           </h1>
           <p className="section-copy mt-5">
             Expliquez votre besoin, indiquez votre adresse ou un point de repère, puis envoyez votre
-            demande directement sur WhatsApp. Aucune donnée n’est enregistrée sur le site.
+            demande de collecte linge Douala directement sur WhatsApp. Aucune donnée n’est
+            enregistrée sur le site.
           </p>
           <a
             href={whatsappHref(whatsappMessages.schedule)}
@@ -107,6 +133,24 @@ export default function PickupPage() {
               Validation des champs obligatoires incluse
             </div>
             <PickupForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-mist py-14">
+        <div className="container-page">
+          <p className="eyebrow">Quartiers</p>
+          <h2 className="section-title mt-3">Collecte possible dans plusieurs zones de Douala</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {landingPages.map((page) => (
+              <Link
+                key={page.slug}
+                href={`/${page.slug}`}
+                className="rounded-lg border border-brand-blue/15 bg-white p-4 text-sm font-bold text-brand-navy transition hover:border-brand-orange hover:text-brand-orange"
+              >
+                Pressing {page.district}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

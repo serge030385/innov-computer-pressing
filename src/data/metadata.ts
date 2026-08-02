@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { business, seo } from "@/data/business";
+import { blogPosts, landingPages } from "@/data/seo-content";
 
 const openGraphImage = {
   url: `${business.websiteUrl}/images/pressing/pressing-hero.png`,
@@ -12,7 +13,17 @@ export const metadataConfig = {
   websiteUrl: business.websiteUrl,
   openGraphImage,
   logoImageUrl: `${business.websiteUrl}/images/logo-innov-pressing.png`,
-  routes: ["/", "/services", "/collecte-et-livraison", "/a-propos", "/contact"]
+  routes: [
+    "/",
+    "/services",
+    "/collecte-et-livraison",
+    "/faq",
+    "/blog",
+    "/a-propos",
+    "/contact",
+    ...blogPosts.map((post) => `/blog/${post.slug}`),
+    ...landingPages.map((page) => `/${page.slug}`)
+  ]
 } as const;
 
 export function canonicalUrl(path = "/") {
@@ -23,19 +34,24 @@ type PageMetadataOptions = {
   title?: string;
   description: string;
   path?: string;
+  keywords?: readonly string[];
+  type?: "website" | "article";
 };
 
 export function createPageMetadata({
   title,
   description,
-  path = "/"
+  path = "/",
+  keywords = [],
+  type = "website"
 }: PageMetadataOptions): Metadata {
-  const resolvedTitle = title ? `${title} | ${business.name}` : seo.title;
+  const resolvedTitle = title ?? seo.title;
   const url = canonicalUrl(path);
 
   return {
-    ...(title ? { title } : {}),
+    ...(title ? { title: { absolute: title } } : {}),
     description,
+    keywords: [...seo.keywords, ...keywords],
     alternates: {
       canonical: url
     },
@@ -45,7 +61,7 @@ export function createPageMetadata({
       url,
       siteName: business.name,
       locale: "fr_CM",
-      type: "website",
+      type,
       images: [{ ...metadataConfig.openGraphImage }]
     },
     twitter: {

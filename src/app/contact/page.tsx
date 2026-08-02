@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { MapPin, MessageCircle, Navigation, Phone, Truck } from "lucide-react";
 import { ContactCard } from "@/components/ContactCard";
+import { JsonLd } from "@/components/JsonLd";
 import {
   business,
   mapsSearchHref,
@@ -8,18 +10,40 @@ import {
   whatsappMessages
 } from "@/data/business";
 import { createPageMetadata } from "@/data/metadata";
+import { breadcrumbSchema, pageGraph, webPageSchema } from "@/data/schema";
+import { primarySeoKeywords } from "@/data/seo-content";
+
+const title = "Contact | Innov-Pressing Douala";
+const description =
+  "Contactez Innov-Pressing à Akwa Nord, Douala : téléphone, WhatsApp, itinéraire et collecte de linge.";
 
 export const metadata: Metadata = {
   ...createPageMetadata({
-    title: "Contact",
-    description:
-      "Contactez Innov-Pressing à Akwa Nord, Douala. Appel, WhatsApp, itinéraire et demande de collecte de linge.",
-    path: "/contact"
+    title,
+    description,
+    path: "/contact",
+    keywords: primarySeoKeywords
   }),
-  title: "Contact",
-  description:
-    "Contactez Innov-Pressing à Akwa Nord, Douala. Appel, WhatsApp, itinéraire et demande de collecte de linge."
+  description
 };
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Accueil", path: "/" },
+  { name: "Contact", path: "/contact" }
+]);
+
+const schema = pageGraph(
+  webPageSchema({
+    path: "/contact",
+    title,
+    description,
+    breadcrumbs: [
+      { name: "Accueil", path: "/" },
+      { name: "Contact", path: "/contact" }
+    ]
+  }),
+  breadcrumbs
+);
 
 export default function ContactPage() {
   const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(
@@ -28,7 +52,8 @@ export default function ContactPage() {
   // TODO: remplacer par les coordonnées GPS exactes du pressing.
 
   return (
-    <main>
+    <main id="contenu">
+      <JsonLd id="contact-schema" data={schema} />
       <section className="bg-brand-mist py-16 sm:py-20">
         <div className="container-page">
           <p className="eyebrow">Contact</p>
@@ -37,7 +62,7 @@ export default function ContactPage() {
           </h1>
           <p className="section-copy mt-5">
             Appelez-nous, écrivez sur WhatsApp ou demandez une collecte de linge à domicile dans
-            Douala.
+            Douala, Akwa Nord et quartiers proches.
           </p>
         </div>
       </section>
@@ -148,6 +173,29 @@ export default function ContactPage() {
               className="h-[380px] w-full border-0 sm:h-[460px]"
               allowFullScreen
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-mist py-14">
+        <div className="container-page flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
+          <div>
+            <h2 className="text-2xl font-bold text-brand-ink">Avant de nous contacter</h2>
+            <p className="mt-2 text-sm leading-7 text-slate-600">
+              Vous pouvez consulter les services, la FAQ ou préparer directement votre demande de
+              collecte de linge.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link href="/services" className="button-secondary">
+              Services
+            </Link>
+            <Link href="/faq" className="button-secondary">
+              FAQ
+            </Link>
+            <Link href="/collecte-et-livraison" className="button-primary">
+              Collecte
+            </Link>
           </div>
         </div>
       </section>

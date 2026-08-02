@@ -18,6 +18,19 @@ npm run lint
 npm run build
 ```
 
+## SEO premium
+
+Le site contient maintenant :
+
+- une FAQ SEO disponible sur `/faq` avec schema `FAQPage` ;
+- un blog disponible sur `/blog` avec des articles de conseils linge et pressing ;
+- des landing pages locales : `/pressing-akwa`, `/pressing-akwa-nord`, `/pressing-bonapriso`, `/pressing-deido`, `/pressing-bali`, `/pressing-bonamoussadi`, `/pressing-logpom`, `/pressing-makepe` ;
+- un sitemap dynamique qui inclut les pages principales, le blog, les articles et les pages quartier ;
+- des données structurées Schema.org pour LocalBusiness, DryCleaningOrLaundry, Organization, WebSite, WebPage, Breadcrumb, FAQPage et BlogPosting.
+
+Les contenus SEO principaux sont centralisés dans `src/data/seo-content.ts`.
+Les données structurées sont centralisées dans `src/data/schema.ts`.
+
 ## Déploiement sur Vercel
 
 1. Connecter le dépôt à Vercel.
@@ -26,6 +39,13 @@ npm run build
    - Install command : `npm install`
 3. Utiliser le domaine définitif du site : `https://innov-pressing.com`.
 4. Déployer.
+
+## Préparation Google
+
+- Google Search Console : ajouter la propriété `https://innov-pressing.com`, vérifier le domaine puis soumettre `https://innov-pressing.com/sitemap.xml`.
+- Google Analytics 4 : créer une propriété GA4, récupérer l’identifiant de mesure et l’ajouter dans `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Le composant `src/components/Analytics.tsx` reste inactif tant que cette variable n’est pas définie.
+- Google Business Profile : utiliser le nom `Innov-Pressing`, l’adresse à Akwa Nord, les numéros de téléphone, le domaine définitif et des photos réelles du pressing.
+- TODO : compléter les horaires d’ouverture et les coordonnées GPS exactes dans les données structurées dès qu’ils sont confirmés.
 
 ## Modifier les informations du pressing
 

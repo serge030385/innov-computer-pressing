@@ -16,7 +16,7 @@ export function MobileMenu() {
   const pathname = usePathname();
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <button
         type="button"
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -35,7 +35,10 @@ export function MobileMenu() {
         <div className="absolute left-4 right-4 top-[76px] rounded-lg border border-slate-200 bg-white p-3 shadow-soft">
           <nav aria-label="Menu mobile" className="grid gap-1">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                link.href === "/"
+                  ? pathname === link.href
+                  : pathname === link.href || pathname.startsWith(`${link.href}/`);
 
               return (
                 <Link

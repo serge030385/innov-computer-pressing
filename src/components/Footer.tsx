@@ -1,12 +1,13 @@
 import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { business, navLinks } from "@/data/business";
+import { landingPages } from "@/data/seo-content";
 import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-brand-navy text-white">
-      <div className="container-page grid gap-10 py-12 md:grid-cols-[1.3fr_1fr_1fr]">
+      <div className="container-page grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.15fr_0.8fr_0.9fr_1fr]">
         <div>
           <Link href="/" aria-label={`${business.name} - accueil`} className="inline-flex">
             <Logo tone="dark" />
@@ -27,6 +28,21 @@ export function Footer() {
                 className="text-sm text-white/72 transition hover:text-white"
               >
                 {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <div>
+          <h2 className="text-base font-bold">Pressing à Douala</h2>
+          <nav className="mt-4 grid gap-2" aria-label="Liens quartiers">
+            {landingPages.map((page) => (
+              <Link
+                key={page.slug}
+                href={`/${page.slug}`}
+                className="text-sm text-white/72 transition hover:text-white"
+              >
+                Pressing {page.district}
               </Link>
             ))}
           </nav>

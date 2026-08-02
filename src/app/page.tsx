@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,9 +12,19 @@ import {
   Truck,
   WalletCards
 } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
 import { ServiceCard } from "@/components/ServiceCard";
-import { business, whatsappHref, whatsappMessages } from "@/data/business";
+import { business, seo, whatsappHref, whatsappMessages } from "@/data/business";
+import { createPageMetadata } from "@/data/metadata";
+import { breadcrumbSchema, pageGraph, webPageSchema } from "@/data/schema";
+import { blogPosts, faqItems, landingPages, primarySeoKeywords } from "@/data/seo-content";
 import { services } from "@/data/services";
+
+export const metadata: Metadata = createPageMetadata({
+  description: seo.description,
+  path: "/",
+  keywords: primarySeoKeywords
+});
 
 const indicators = [
   "Collecte à domicile",
@@ -52,19 +63,32 @@ const pickupSteps = [
   "Nous vous le livrons une fois prêt"
 ];
 
+const homeBreadcrumbs = breadcrumbSchema([{ name: "Accueil", path: "/" }]);
+
+const homeSchema = pageGraph(
+  webPageSchema({
+    path: "/",
+    title: seo.title,
+    description: seo.description,
+    breadcrumbs: [{ name: "Accueil", path: "/" }]
+  }),
+  homeBreadcrumbs
+);
+
 export default function HomePage() {
   return (
-    <main>
+    <main id="contenu">
+      <JsonLd id="home-schema" data={homeSchema} />
       <section className="soft-grid overflow-hidden">
         <div className="container-page grid min-h-[calc(100vh-76px)] items-center gap-10 py-14 lg:grid-cols-[0.95fr_1.05fr] lg:py-20">
           <div className="fade-up">
             <p className="eyebrow">{business.displayName}</p>
             <h1 className="mt-5 max-w-3xl text-4xl font-black tracking-normal text-brand-navy sm:text-6xl lg:text-7xl">
-              {business.slogan}
+              Pressing à Douala avec collecte et livraison de linge
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
-              Confiez-nous vos vêtements, nous en prendrons soin avec professionnalisme, rapidité
-              et attention.
+              Innov-Pressing propose lavage à la pièce, lavage au poids, repassage, pressing
+              express et nettoyage de vêtements à Akwa Nord et dans les quartiers de Douala.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -127,8 +151,9 @@ export default function HomePage() {
             <h2 className="section-title mt-3">Un pressing au service de votre quotidien</h2>
             <p className="section-copy mt-5">
               Innov-Pressing prend soin de vos vêtements grâce à un service rapide,
-              pratique et accessible. Nous proposons le lavage à la pièce, le lavage au poids, le
-              lavage express ainsi que la collecte et la livraison à domicile dans Douala.
+              pratique et accessible. Notre pressing à Douala propose le lavage à la pièce, le
+              lavage au poids, le lavage express, le repassage ainsi que la collecte et la livraison
+              à domicile.
             </p>
           </div>
         </div>
@@ -149,6 +174,37 @@ export default function HomePage() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <div className="container-page">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="eyebrow">Zones desservies</p>
+              <h2 className="section-title mt-3">Pressing à Akwa Nord et dans Douala</h2>
+              <p className="section-copy mt-5">
+                Retrouvez des informations dédiées pour organiser le lavage, le repassage, la
+                collecte et la livraison de linge dans plusieurs quartiers de Douala.
+              </p>
+            </div>
+            <Link href="/collecte-et-livraison" className="button-secondary md:shrink-0">
+              Organiser une collecte
+              <ArrowRight aria-hidden="true" className="size-5" />
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {landingPages.map((page) => (
+              <Link
+                key={page.slug}
+                href={`/${page.slug}`}
+                className="surface p-5 transition hover:-translate-y-1 hover:shadow-soft"
+              >
+                <h3 className="text-lg font-bold text-brand-ink">Pressing {page.district}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{page.description}</p>
+              </Link>
             ))}
           </div>
         </div>
@@ -264,6 +320,71 @@ export default function HomePage() {
           >
             Vérifier la disponibilité
           </a>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="eyebrow">FAQ SEO</p>
+            <h2 className="section-title mt-3">Questions fréquentes sur le pressing à Douala</h2>
+            <p className="section-copy mt-5">
+              Des réponses concrètes sur la collecte de linge, la livraison, le lavage au poids,
+              les rideaux, les couettes, le repassage et le service express.
+            </p>
+            <Link href="/faq" className="button-secondary mt-8">
+              Voir la FAQ complète
+              <ArrowRight aria-hidden="true" className="size-5" />
+            </Link>
+          </div>
+          <div className="grid gap-4">
+            {faqItems.slice(0, 4).map((item) => (
+              <article key={item.question} className="surface p-5">
+                <h3 className="text-lg font-bold text-brand-ink">{item.question}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-600">{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-mist py-16 sm:py-20">
+        <div className="container-page">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="eyebrow">Conseils linge</p>
+              <h2 className="section-title mt-3">Guides pratiques pour entretenir vos vêtements</h2>
+            </div>
+            <Link href="/blog" className="button-secondary md:shrink-0">
+              Lire le blog
+              <ArrowRight aria-hidden="true" className="size-5" />
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {blogPosts.slice(0, 3).map((post) => (
+              <article key={post.slug} className="surface overflow-hidden">
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src={post.image}
+                    alt={post.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-blue">
+                    {post.readTime}
+                  </p>
+                  <h3 className="mt-3 text-xl font-bold text-brand-ink">{post.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{post.excerpt}</p>
+                  <Link href={`/blog/${post.slug}`} className="mt-5 inline-flex text-sm font-bold text-brand-orange">
+                    Lire l’article
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
